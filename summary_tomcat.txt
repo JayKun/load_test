@@ -1,0 +1,25 @@
+[2018-12-02 07:26:54,802] 46c3e521f1b5/INFO/locust.main: Run time limit set to 30 seconds
+[2018-12-02 07:26:54,802] 46c3e521f1b5/INFO/locust.main: Starting Locust 0.9.0
+[2018-12-02 07:26:54,803] 46c3e521f1b5/INFO/locust.runners: Hatching and swarming 370 clients at the rate 20 clients/s...
+[2018-12-02 07:27:13,963] 46c3e521f1b5/INFO/locust.runners: All locusts hatched: MyLocust: 370
+[2018-12-02 07:27:13,963] 46c3e521f1b5/INFO/locust.runners: Resetting stats
+
+[2018-12-02 07:27:24,803] 46c3e521f1b5/INFO/locust.main: Time limit reached. Stopping Locust.
+[2018-12-02 07:27:24,806] 46c3e521f1b5/INFO/locust.main: Shutting down (exit code 0), bye.
+[2018-12-02 07:27:24,808] 46c3e521f1b5/INFO/locust.main: Cleaning up runner...
+[2018-12-02 07:27:24,902] 46c3e521f1b5/INFO/locust.main: Running teardowns...
+ Name                                                          # reqs      # fails     Avg     Min     Max  |  Median   req/s
+--------------------------------------------------------------------------------------------------------------------------------------------
+ GET /editor/post?action=open&username=cs144&postid=             2338     0(0.00%)      17       2     491  |      12  194.56
+ POST /editor/post?action=save                                    237     0(0.00%)     124      16     575  |      98   20.22
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Total                                                           2575     0(0.00%)                                     214.78
+
+Percentage of the requests completed within given times
+ Name                                                           # reqs    50%    66%    75%    80%    90%    95%    98%    99%   100%
+--------------------------------------------------------------------------------------------------------------------------------------------
+ GET /editor/post?action=open&username=cs144&postid=              2338     12     17     21     24     34     48     69     95    490
+ POST /editor/post?action=save                                     237     98    140    190    200    250    310    360    390    580
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Total                                                            2575     13     20     25     30     55    110    200    250    580
+

@@ -19,20 +19,20 @@
   },
   { "Id": 4,
     "Test": "read_node",
-    "Number Of Users": 0,
-    "Total Number Of Req": 0,
-    "Total RPS": 0,
+    "Number Of Users": 100,
+    "Total Number Of Req": 1891,
+    "Total RPS": 65.40,
     "Request Distribution": [
-      {"name": "GET /blog/cs144", "98%": 0}
+      {"name": "GET /blog/cs144", "98%": 27}
     ]
   },
   { "Id": 5,
     "Test": "write_node",
-    "Number Of Users": 0,
-    "Total Number Of Req": 0,
-    "Total RPS": 0,
+    "Number Of Users": 100,
+    "Total Number Of Req": 1671,
+    "Total RPS": 64.70,
     "Request Distribution": [
-      {"name": "PUT /api/cs144", "98%": 0}
+      {"name": "PUT /api/cs144", "98%": 7300}
     ]
   }
 ]

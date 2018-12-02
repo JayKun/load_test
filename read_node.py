@@ -8,11 +8,6 @@ def readPost(locust):
 
 class MyTaskSet(TaskSet):
     tasks = [readPost]
-    def on_start(locust):
-        response = locust.client.post("/login", data={"username": "cs144", "password": "password"})
-        if response.status_code != 200:
-            print("Make sure server is running")
-            sys.exit()
 
 class MyLocust(HttpLocust):
     task_set = MyTaskSet

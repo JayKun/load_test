@@ -1,22 +1,22 @@
-import sys, random
+import sys, random, json
 from locust import HttpLocust, TaskSet
 
 def writePost(locust):
     postid = random.randint(1, 500)
-    url_prefix = '/blog/cs144/'
+    url_prefix = '/api/cs144/'
     title = 'Loading Test'
     body = '***Hello World!***'
-    locust.client.post(url_prefix,
-            data={'title': title, 'body': body, postid: str(postid)},
+    res = locust.client.put(
+            url_prefix + str(postid),
+            data={'title': title, 'body': body},
             name=url_prefix)
 
 class MyTaskSet(TaskSet):
-    tasks = [readPost]
+    tasks = [writePost]
     def on_start(locust):
-        response = locust.client.post("/login", data={"username": "cs144", "password": "password"})
-        if response.status_code != 200:
-            print("Make sure server is running")
-            sys.exit()
+        data = {'username': 'cs144', 'password': 'password', 'redirect':'/'}
+        response = locust.client.post('/login', data=data)
+        print(response.status_code)
 
 class MyLocust(HttpLocust):
     task_set = MyTaskSet

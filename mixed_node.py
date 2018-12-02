@@ -8,17 +8,18 @@ def readPost(locust):
 
 def writePost(locust):
     postid = random.randint(1, 500)
-    url_prefix = '/blog/cs144/'
+    url_prefix = '/api/cs144/'
     title = 'Loading Test'
     body = '***Hello World!***'
-    locust.client.post(url_prefix,
-            data={'title': title, 'body': body, postid: str(postid)},
+    res = locust.client.put(
+            url_prefix + str(postid),
+            data={'title': title, 'body': body},
             name=url_prefix)
 
 class MyTaskSet(TaskSet):
-    tasks = [readPost]
+    tasks = { readPost:9, writePost:1 }
     def on_start(locust):
-        response = locust.client.post("/login", data={"username": "cs144", "password": "password"})
+        response = locust.client.post("/login", data={"username": "cs144", "password": "password", "redirect":"/"})
         if response.status_code != 200:
             print("Make sure server is running")
             sys.exit()
