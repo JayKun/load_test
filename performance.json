@@ -2,10 +2,10 @@
   { "Id": 1,
     "Test": "read_tomcat",
     "Number Of Users": 100,
-    "Total Number Of Req": 1881,
+    "Total Number Of Req": 1900,
     "Total RPS": 66.50,
     "Request Distribution": [
-      {"name": "GET /editor/post?action=open", "98%": 1600}
+      {"name": "GET /editor/post?action=open", "98%": 24}
     ]
   },
   { "Id": 2,
@@ -14,25 +14,25 @@
     "Total Number Of Req": 1868,
     "Total RPS": 64.70,
     "Request Distribution": [
-      {"name": "POST /editor/post?action=save", "98%": 240}
+      {"name": "POST /editor/post?action=save", "98%": 200}
     ]
   },
   { "Id": 4,
     "Test": "read_node",
     "Number Of Users": 100,
-    "Total Number Of Req": 1891,
-    "Total RPS": 65.40,
+    "Total Number Of Req": 1914,
+    "Total RPS": 66.30,
     "Request Distribution": [
-      {"name": "GET /blog/cs144", "98%": 27}
+      {"name": "GET /blog/cs144", "98%": 14}
     ]
   },
   { "Id": 5,
     "Test": "write_node",
     "Number Of Users": 100,
-    "Total Number Of Req": 1671,
-    "Total RPS": 64.70,
+    "Total Number Of Req": 1860,
+    "Total RPS": 66.70,
     "Request Distribution": [
-      {"name": "PUT /api/cs144", "98%": 7300}
+      {"name": "PUT /api/cs144", "98%": 130}
     ]
   }
 ]

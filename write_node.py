@@ -16,7 +16,6 @@ class MyTaskSet(TaskSet):
     def on_start(locust):
         data = {'username': 'cs144', 'password': 'password', 'redirect':'/'}
         response = locust.client.post('/login', data=data)
-        print(response.status_code)
 
 class MyLocust(HttpLocust):
     task_set = MyTaskSet
